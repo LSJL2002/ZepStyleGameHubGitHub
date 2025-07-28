@@ -8,14 +8,14 @@ public class ShirtAnimation : MonoBehaviour
 {
     public SpriteRenderer bodyRenderer;
     public SpriteRenderer shirtRenderer;
-    public Sprite[] bodySprites;
+    public Sprite[] bodySprites; //Base character sprites. 
 
-    public Sprite[] shirtSprites1;
-    public Sprite[] shirtSprites2;
+    public Sprite[] shirtSprites1; //First shirt option
+    public Sprite[] shirtSprites2; //Second shirt option
     public CharacterCustomize characterCustomize;
     void Update()
     {
-        Sprite currentBody = bodyRenderer.sprite;
+        Sprite currentBody = bodyRenderer.sprite; //Getting the sprite of the current spirte of the player. We go through all the sprites in the sprites file until we find the same one. If the same one is found,  we find the same index shirt.
         for (int i = 0; i < bodySprites.Length; i++)
         {
             if (bodySprites[i] == currentBody)
@@ -50,7 +50,7 @@ public class ShirtAnimation : MonoBehaviour
                             }
                             break;
                         }
-                    default:
+                    default: //If the option selected is not 1 or 2 it will just render nothing, thus the base character model. 
                         shirtRenderer.sprite = null;
                         break;
                 }

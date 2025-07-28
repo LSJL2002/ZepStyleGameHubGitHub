@@ -17,7 +17,7 @@ public class CarSpawner : MonoBehaviour
         StartCoroutine(SpawnCars());
     }
 
-    IEnumerator SpawnCars()
+    IEnumerator SpawnCars() //Spawn cars in a random interveral between 3f and 5f
     {
         while (true)
         {

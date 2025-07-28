@@ -27,10 +27,10 @@ public class TerrainGenerator : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 4; i++) //Start should have Grass Platforms and avoid instakilling the player. 
         {
             Instantiate(grassPref, new Vector3(0, 0, currentZ), Quaternion.identity);
-            currentZ += grassrowdepth;
+            currentZ += grassrowdepth; //Keep track of the Z In order to place more platforms.
         }
         lastblock = BlockType.Grass;
         sameblock = 3;
@@ -90,7 +90,7 @@ public class TerrainGenerator : MonoBehaviour
 
     BlockType ChooseNextBlock()
     {
-        if (sameblock >= sameblockmax)
+        if (sameblock >= sameblockmax) //If the sameblock has been chosen 6 times it will force to change to another one.
         {
             return DifferentBlock(lastblock);
         }
@@ -117,7 +117,7 @@ public class TerrainGenerator : MonoBehaviour
         return choice;
     }
     
-    void SpawnTreesOnGrass(float zPos)
+    void SpawnTreesOnGrass(float zPos) //The tree prefabs will only spawn on the grass platforms with in the range of -100f and 98f
     {
         for (int i = 0; i < treesPerGrassRow; i++)
         {

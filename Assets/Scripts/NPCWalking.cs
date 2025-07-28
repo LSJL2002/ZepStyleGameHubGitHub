@@ -23,7 +23,7 @@ public class NPCWalking : MonoBehaviour
     private float changeDirTimer;
     private Animator anim;
     private bool isPaused;
-    private Vector2 originPosition;
+    private Vector2 originPosition; 
     private Vector2 targetPos;
 
     private int dialogueIndex = 0;
@@ -33,9 +33,9 @@ public class NPCWalking : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
-        originPosition = rb.position;
+        originPosition = rb.position; //get the original coordinates of the player
         box.SetActive(false);
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation; // Always Start with freezing the player's rigidbody. 
     }
 
     void Update()

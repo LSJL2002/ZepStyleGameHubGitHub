@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
     }
     private void Animate()
     {
-        if (input.magnitude > 0.1f || input.magnitude < -0.1f)
+        if (input.magnitude > 0.1f || input.magnitude < -0.1f) //If the input value is given, then the bool for isMoving is set true, indicating that the player is moving. 
         {
             isMoving = true;
         }
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
 
         if (isMoving)
         {
-            animator.SetFloat("X", x);
+            animator.SetFloat("X", x); //Blend Tree float parameters are being adjusted in order to see what animation it should play
             animator.SetFloat("Y", y);
         }
 

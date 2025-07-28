@@ -17,13 +17,13 @@ public class ButtonHoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerEx
         originalScale = transform.localScale;
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public void OnPointerEnter(PointerEventData eventData) //If the mouse is above the button it will change color and the size
     {
         image.color = hoverColor;
         transform.localScale = originalScale * 1.1f;
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void OnPointerExit(PointerEventData eventData) //If the mouse left the button it will return to its orignal state. 
     {
         image.color = originalColor;
         transform.localScale = originalScale;

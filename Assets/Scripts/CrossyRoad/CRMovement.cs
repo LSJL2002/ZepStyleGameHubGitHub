@@ -35,7 +35,7 @@ public class CRMovement : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
                 direction = Vector3.forward;
-            else if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && transform.position.z > maxZPosition - 4f)
+            else if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && transform.position.z > maxZPosition - 4f) //Cannot go back three times limit to two times. 
                 direction = Vector3.back;
             else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
                 direction = Vector3.left;
@@ -84,7 +84,7 @@ public class CRMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision) // Will render the mesh thus making it invisible. NOT DESTROY since we still need the player to get the UI and particles to play
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {

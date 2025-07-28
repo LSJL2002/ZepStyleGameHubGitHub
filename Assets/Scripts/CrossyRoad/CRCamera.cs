@@ -27,8 +27,8 @@ public class CRCamera : MonoBehaviour
         Vector3 pos = transform.position;
         pos.x = target.position.x + offsetX;
         pos.y = target.position.y + offsetY;
-        float targetZ = target.position.z + offsetZ;
-        pos.z = Mathf.Max(transform.position.z, targetZ);
+        float targetZ = target.position.z + offsetZ; 
+        pos.z = Mathf.Max(transform.position.z, targetZ); //Will lock onto the highest z value that the player reached and will not go back. 
         transform.position = pos;
     }
 }
